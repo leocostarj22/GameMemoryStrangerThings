@@ -13,6 +13,21 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+.title {
+    color: #FFF;
+}
+
+.board {
+    position: absolute;
+    margin-left: 30px;
+    margin-top: 30px;
+}
+
+.boardPoints {
+    display: flex;
+}
+
+
 .memory-game {
     height: 640px;
     width: 640px;

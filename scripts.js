@@ -3,6 +3,21 @@ let hasFlippedCard = false;
 let firstCard, secondCard;
 let lockBoard = false;
 
+let points = 0;
+let turns = 0;
+
+function updatePoints() {
+  currentPoints = document.getElementById('points');
+  points++;
+  currentPoints.innerHTML = points;
+}
+
+function updateTurns() {
+  currentTurns = document.getElementById('turns');
+  turns++;
+  currentTurns.innerHTML = turns;
+}
+
 function flipCard() {
   if (lockBoard) return;
   if (this === firstCard) return;
@@ -17,10 +32,12 @@ function flipCard() {
   secondCard = this;
   hasFlippedCard = false;
   checkForMatch();
+  updateTurns();
 }
 
 function checkForMatch() {
   if (firstCard.dataset.card === secondCard.dataset.card) {
+    updatePoints();
     disableCards();
     return;
   }
