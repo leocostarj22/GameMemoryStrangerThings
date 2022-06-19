@@ -1,0 +1,145 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@400;700;900&display=swap');
+body {
+    height: 100vh;
+    display: flex;
+    background-image: url(./img/stback.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    font-family: 'Poppins', sans-serif;
+}
+
+.memory-game {
+    height: 640px;
+    width: 640px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    perspective: 1000px;
+    background-color: rgba(0, 0, 0, 0.9);
+    box-shadow: 20px;
+    border-radius: 20px;
+    opacity: 0.9;
+}
+
+.card {
+    height: calc(33.33% - 10px);
+    width: calc(25% - 10px);
+    margin: 5px;
+    position: relative;
+    box-shadow: 1px 1px 1px rgba(1, 1, 1, .3);
+    cursor: pointer;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    /*não deixa o elemento achatado no plano*/
+    transition: transform .9s;
+}
+
+.card:active {
+    transform: scale(0.97);
+    transition: transform .3s;
+}
+
+.card-front,
+.card-back {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    backface-visibility: hidden;
+    position: absolute;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0);
+    /* uma propriedade que retira o verso do elemento*/
+}
+
+.card-front {
+    transform: rotateY(180deg);
+}
+
+/* flip card animation*/
+
+.card.flip {
+    transform: rotateY(180deg);
+}
+
+#musica { 
+    display: none;
+}
+
+footer {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    bottom: 0;
+    color: #FFF;
+    width: 100%;
+    height: 100px;    
+    text-align: center;
+    line-height: 100px;
+    
+}
+footer input{
+    padding: 4px;
+    width: 200px;
+    background-color: rgba(0, 0, 0, 0.9);
+    box-shadow: 20px;
+    border-radius: 20px;
+    opacity: 0.9;
+    color: rgb(90, 0, 0);
+    font-size: 14px;
+    text-decoration: none;
+    font-family: 'Poppins';
+    margin: 10px;
+    color: white;
+}
+input:hover{
+    color: white;
+    background-color: rgba(59, 0, 0, 0.9);
+    cursor: pointer;
+    border: none;
+    font-family: 'Poppins';
+}
+
+/* Responsividade do projeto */
+
+@media (max-width: 900px) { /* Quando a tela chegar em 650px os cards serão reduzidos*/
+    
+    body {
+        height: 100vh;
+        display: flex;
+        background-image: url(./img/stback.jpg);
+        background-repeat: repeat;
+        background-size:cover;
+        
+    }   
+    .memory-game {
+        height: 640px;
+        width: 640px;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        perspective: 500px;
+        background-color: rgba(0, 0, 0, 0.9);
+        box-shadow: 20px;
+        border-radius: 20px;
+        opacity: 0.9;
+    }
+    
+    .card {
+        height: calc(25% - 10px);
+        width: calc(25% - 10px);
+        margin: 5px;
+        position: relative;
+        box-shadow: 1px 1px 1px rgba(1, 1, 1, .3);
+        cursor: pointer;
+        transform: scale(1);
+        transform-style: preserve-3d;
+        /*não deixa o elemento achatado no plano*/
+        transition: transform .9s;
+    }

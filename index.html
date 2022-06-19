@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stranger Things - Memory Game</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@400;700;900&display=swap');
+    *{
+        padding: 0px;
+        margin: 0px;
+    }
+    body {
+        height: 100vh;
+        background-image: url(./img/stback.jpg);
+        background-repeat: no-repeat;
+        background-size:cover;
+        font-family: 'Poppins', sans-serif;
+    }
+    .inicio{
+        height: 100vh;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+    }
+    .inicio .imgabre{
+        height: 400px;
+        width: 740px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        perspective: 500px;
+        background-color: rgba(0, 0, 0, 0.9);
+        box-shadow: 20px;
+        border-radius: 20px;
+        opacity: 0.9;
+    }
+    form{
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        padding: 20px;
+        margin-top: 10px;
+    }
+    input{
+        display: block;
+        margin: 0 auto;
+        padding: 10px;
+        width: 200px;
+        background-color: rgba(0, 0, 0, 0.9);
+        box-shadow: 20px;
+        border-radius: 20px;
+        opacity: 0.9;
+        color: rgb(90, 0, 0);
+        font-size: 20px;
+        text-decoration: none;
+        font-family: 'Poppins', sans-serif;
+    }
+    input:hover{
+        color: white;
+        background-color: rgba(0, 0, 0, 0.9);
+        cursor: pointer;
+        border: none;
+        font-family: 'Poppins';
+    }
+    @media (max-width: 900px) { /* Quando a tela chegar em 650px os cards serão reduzidos*/
+    
+        .inicio{
+        height: 100vh;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+    }
+    .inicio .imgabre{
+        height: 200px;
+        width: 340px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        perspective: 500px;
+        background-color: rgba(0, 0, 0, 0.9);
+        box-shadow: 20px;
+        border-radius: 20px;
+        opacity: 0.9;
+    } 
+    
+    </style>
+    
+</head>
+<body>
+        <div class="inicio">
+        <img src="./img/abregame.gif" alt="Imagem Stranger Things gif animada" class="imgabre">
+        <form action="./game.html">
+        <input type="submit" value="COMEÇAR">
+        </form>
+
+    </body>
+</html>
