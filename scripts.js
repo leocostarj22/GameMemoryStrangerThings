@@ -2,6 +2,20 @@ const cards = document.querySelectorAll(".card");
 let hasFlippedCard = false;
 let firstCard, secondCard;
 let lockBoard = false;
+let points = 0;
+let turns = 0;
+
+function updatePoints() {
+  currentPoints = document.getElementById('points');
+  points++;
+  currentPoints.innerHTML = points;
+  }
+
+  function updateTurns() {
+    currentTurns = document.getElementById('turns');
+    turns++;
+    currentTurns.innerHTML = turns;
+    }
 
 function flipCard() {
   if (lockBoard) return;
@@ -22,8 +36,9 @@ function flipCard() {
 function checkForMatch() {
   if (firstCard.dataset.card === secondCard.dataset.card) {
     disableCards();
+    updatePoints();
     return;
-  }
+}
 
   unflipCards();
 }
@@ -38,13 +53,14 @@ function disableCards() {
 function unflipCards() {
   lockBoard = true;
   
-
   setTimeout(() => {
     firstCard.classList.remove("flip");
     secondCard.classList.remove("flip");
     musica2.play();
     resetBoard();
+    
   }, 1500);
+  updateTurns();
 }
 
 function resetBoard() {
@@ -62,5 +78,3 @@ function resetBoard() {
 cards.forEach((card) => {
   card.addEventListener("click", flipCard);
 });
-
-
