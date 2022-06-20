@@ -106,6 +106,23 @@ input:hover{
     font-family: 'Poppins';
 }
 
+.title {
+    color: #FFF;
+    padding: 10px;
+    margin: 10px;
+    }
+    
+.board {
+    display: flex;
+    position: absolute;
+    margin-left: 30px;
+    margin-top: 30px;
+    }
+    
+.boardPoints {
+    display: flex;
+    }
+
 /* Responsividade do projeto */
 
 @media (max-width: 900px) { /* Quando a tela chegar em 650px os cards serão reduzidos*/
